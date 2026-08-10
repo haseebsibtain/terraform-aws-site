@@ -75,7 +75,7 @@
     margin:38px 0 0;
     background:var(--dark);
     border-radius:3px;
-    padding:20px 22px;
+    padding:26px 26px;
     display:flex;
     flex-wrap:wrap;
     align-items:center;
@@ -83,13 +83,13 @@
     gap:16px 24px;
   }
   .built-text{
-    font-family:var(--mono);
-    font-size:.82rem;
-    line-height:1.6;
-    color:var(--dark-mute);
-    max-width:52ch;
+    font-size:1.02rem;
+    line-height:1.62;
+    color:#CBD3DB;
+    max-width:50ch;
+    margin:0;
   }
-  .built-text b{color:#fff;font-weight:400}
+  .built-text b{color:#fff;font-weight:500}
   .built a{
     font-family:var(--mono);
     font-size:.84rem;
@@ -103,14 +103,6 @@
     transition:transform .15s ease;
   }
   .built a:hover{transform:translateX(3px)}
-  .edge{
-    font-family:var(--mono);
-    font-size:.72rem;
-    color:#5D6B7A;
-    margin:12px 0 0;
-    width:100%;
-  }
-
   /* ---------- metrics ---------- */
 
   .metrics{
@@ -239,7 +231,6 @@
   <div class="built">
     <p class="built-text">This page is a <b>resume</b>. The infrastructure under it was built from scratch for this project: a private <b>S3</b> bucket, <b>CloudFront</b> in front of it and DNS. Everything defined in <b>Terraform</b>.</p>
     <a href="https://github.com/haseebsibtain/terraform-aws-site">Read the code that built this →</a>
-    <p class="edge" id="edge">&nbsp;</p>
   </div>
 </header>
 
@@ -359,18 +350,6 @@
   </div>
   <p class="colophon">Haseeb Sibtain · Carteret, NJ</p>
 </footer>
-
-<script>
-  fetch("/", { method: "HEAD", cache: "no-store" })
-    .then(function (r) {
-      var pop = r.headers.get("x-amz-cf-pop");
-      if (pop) {
-        document.getElementById("edge").textContent =
-          "Served to you from CloudFront edge " + pop + ".";
-      }
-    })
-    .catch(function () {});
-</script>
 
 </body>
 </html>
