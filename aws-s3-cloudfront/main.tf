@@ -6,7 +6,7 @@
 # ---------------------------------------------------------------------------
 
 resource "aws_s3_bucket" "site" {
-  bucket = "${var.project_name}-origin"
+  bucket        = "${var.project_name}-origin"
   force_destroy = true
 }
 
@@ -73,7 +73,7 @@ resource "aws_s3_object" "site_files" {
   bucket = aws_s3_bucket.site.id
   key    = each.key
   source = "${path.module}/${each.value}"
-  etag = filemd5("${path.module}/${each.value}")
+  etag   = filemd5("${path.module}/${each.value}")
 
   content_type = lookup(
     {
@@ -104,6 +104,7 @@ resource "aws_cloudfront_origin_access_control" "site" {
 
 resource "aws_cloudfront_distribution" "site" {
   enabled             = true
+  aliases             = [var.domain_name, "www.${var.domain_name}"]
   comment             = "${var.project_name} — private S3 origin via OAC"
   default_root_object = "index.html" # CloudFront's index-document equivalent
   price_class         = var.price_class
@@ -122,7 +123,7 @@ resource "aws_cloudfront_distribution" "site" {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
     compress               = true # gzip/brotli at the edge for text content
-    cache_policy_id = data.aws_cloudfront_cache_policy.caching_optimized.id
+    cache_policy_id        = data.aws_cloudfront_cache_policy.caching_optimized.id
   }
 
   restrictions {
@@ -130,9 +131,10 @@ resource "aws_cloudfront_distribution" "site" {
       restriction_type = "none"
     }
   }
-
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn      = aws_acm_certificate_validation.site.certificate_arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
   }
   custom_error_response {
     error_code            = 403

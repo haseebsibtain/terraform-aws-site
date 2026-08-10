@@ -31,3 +31,8 @@ variable "site_files" {
     "index.html" = "site/index.html"
   }
 }
+variable "domain_name" {
+  description = "Apex domain for the site"
+  type        = string
+  default     = "haseebsibtain.com"
+}
