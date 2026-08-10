@@ -10,7 +10,7 @@ terraform {
 
   # Bootstrap note in README — the state bucket is created once, out of band.
   backend "s3" {
-    bucket       = "hsg-tfstate-poc"        # created manually before first init
+    bucket       = "hsg-tfstate-poc" # created manually before first init
     key          = "s3-cloudfront/terraform.tfstate"
     region       = "us-east-1"
     encrypt      = true
@@ -23,10 +23,10 @@ provider "aws" {
 
   default_tags {
     tags = {
-      project   = "terraform-poc"
-      owner     = "haseeb"
+      project    = "terraform-poc"
+      owner      = "haseeb"
       managed_by = "terraform"
-      expires   = "2026-08-12"
+      expires    = "2026-08-12"
     }
   }
 }
