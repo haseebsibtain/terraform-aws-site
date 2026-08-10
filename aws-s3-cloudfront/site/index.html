@@ -3,28 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Haseeb Sibtain — Senior CloudOps / DevOps Engineer</title>
-<meta name="description" content="Haseeb Sibtain, Senior CloudOps and DevOps Engineer. Ten years of cloud infrastructure, automation, and platform reliability across AWS and Azure.">
+<title>Haseeb Sibtain — Senior Cloud Engineer</title>
+<meta name="description" content="Haseeb Sibtain, Senior Cloud Engineer. Ten years of AWS and Azure infrastructure, automation, and cloud cost work. Served from S3 via CloudFront, infrastructure defined in Terraform.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F1F4F3;
-    --paper-2:#E7ECEA;
-    --ink:#14201D;
-    --slate:#5B6B67;
-    --rule:#CFD8D5;
-    --signal:#1F6F5C;
-    --signal-soft:#DCE9E5;
-    --display:"Space Grotesk",system-ui,sans-serif;
+    --paper:#F3F2EF;
+    --panel:#E7E6E1;
+    --edge:#D3D2CC;
+    --ink:#1D2530;
+    --muted:#616B78;
+    --orange:#C2570A;
+    --amber:#FF9900;
+    --dark:#161C24;
+    --dark-mute:#8593A2;
+    --display:"Archivo",system-ui,sans-serif;
     --body:"IBM Plex Sans",system-ui,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,monospace;
-    --maxw:1080px;
   }
 
   *{box-sizing:border-box}
-
   html{-webkit-text-size-adjust:100%}
 
   body{
@@ -33,445 +33,344 @@
     color:var(--ink);
     font-family:var(--body);
     font-size:16px;
-    line-height:1.55;
+    line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
 
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-
-  a{color:inherit}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 30px}
+  a{color:var(--ink)}
+  a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 
   /* ---------- masthead ---------- */
 
-  .masthead{padding:72px 0 40px}
+  header{padding:80px 0 0}
 
   .name{
     font-family:var(--display);
-    font-weight:700;
-    font-size:clamp(2.6rem,7vw,4.6rem);
-    line-height:.95;
-    letter-spacing:-.03em;
+    font-weight:800;
+    font-size:clamp(2.6rem,8vw,4.6rem);
+    line-height:.94;
+    letter-spacing:-.035em;
     margin:0;
   }
 
   .role{
     font-family:var(--mono);
     font-size:.8rem;
-    letter-spacing:.14em;
+    letter-spacing:.15em;
     text-transform:uppercase;
-    color:var(--signal);
+    color:var(--orange);
     margin:18px 0 0;
   }
 
   .thesis{
-    font-size:clamp(1.05rem,2.2vw,1.3rem);
-    line-height:1.5;
-    max-width:60ch;
-    margin:26px 0 0;
-    color:var(--ink);
+    max-width:54ch;
+    margin:24px 0 0;
+    font-size:1.06rem;
   }
 
-  .contact{
+  /* ---------- built-with strip ---------- */
+
+  .built{
+    margin:38px 0 0;
+    background:var(--dark);
+    border-radius:3px;
+    padding:20px 22px;
     display:flex;
     flex-wrap:wrap;
-    gap:8px 22px;
-    margin:30px 0 0;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px 24px;
+  }
+  .built-text{
     font-family:var(--mono);
     font-size:.82rem;
-    color:var(--slate);
+    line-height:1.6;
+    color:var(--dark-mute);
+    max-width:52ch;
   }
-  .contact a{text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
-  .contact a:hover{border-bottom-color:var(--signal);color:var(--signal)}
-
-  /* ---------- signature: tenure timeline ---------- */
-
-  .timeline{
-    border-top:1px solid var(--ink);
-    border-bottom:1px solid var(--rule);
-    padding:34px 0 30px;
-  }
-
-  .tl-label{
+  .built-text b{color:#fff;font-weight:400}
+  .built a{
     font-family:var(--mono);
-    font-size:.7rem;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--slate);
-    margin:0 0 22px;
-  }
-
-  .tl-track{position:relative;display:grid;gap:9px}
-
-  .tl-row{
-    position:relative;
-    height:34px;
-    background:var(--paper-2);
-    border-radius:2px;
-  }
-
-  .tl-bar{
-    position:absolute;
-    top:0;
-    height:100%;
-    background:var(--signal);
-    border-radius:2px;
-    display:flex;
-    align-items:center;
-    padding:0 12px;
+    font-size:.84rem;
+    color:var(--dark);
+    background:var(--amber);
+    text-decoration:none;
     white-space:nowrap;
-    overflow:hidden;
-    transform-origin:left center;
-    animation:draw .75s cubic-bezier(.22,.9,.3,1) both;
-  }
-  .tl-bar span{
-    font-family:var(--mono);
-    font-size:.74rem;
+    padding:11px 18px;
+    border-radius:3px;
     font-weight:500;
-    color:#fff;
-    letter-spacing:.02em;
+    transition:transform .15s ease;
   }
-  .tl-row:nth-child(1) .tl-bar{background:#9AAEA8;animation-delay:.05s}
-  .tl-row:nth-child(2) .tl-bar{background:#6E8A83;animation-delay:.16s}
-  .tl-row:nth-child(3) .tl-bar{background:#3E7A6C;animation-delay:.27s}
-  .tl-row:nth-child(4) .tl-bar{background:var(--signal);animation-delay:.38s}
-
-  @keyframes draw{from{transform:scaleX(0);opacity:.4}to{transform:scaleX(1);opacity:1}}
-
-  .tl-axis{
-    display:flex;
-    justify-content:space-between;
-    margin-top:12px;
+  .built a:hover{transform:translateX(3px)}
+  .edge{
     font-family:var(--mono);
-    font-size:.7rem;
-    color:var(--slate);
+    font-size:.72rem;
+    color:#5D6B7A;
+    margin:12px 0 0;
+    width:100%;
   }
 
   /* ---------- metrics ---------- */
 
   .metrics{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:1px;
-    background:var(--rule);
-    border-bottom:1px solid var(--rule);
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:34px 30px;
+    padding:56px 0 52px;
   }
-  .metric{background:var(--paper);padding:32px 0 34px}
-  .metric-fig{
+  .fig{
     font-family:var(--display);
-    font-weight:700;
-    font-size:clamp(1.9rem,4vw,2.6rem);
+    font-weight:800;
+    font-size:clamp(1.8rem,3.6vw,2.4rem);
     letter-spacing:-.03em;
     line-height:1;
   }
-  .metric-cap{
-    font-family:var(--mono);
-    font-size:.72rem;
-    color:var(--slate);
-    margin-top:10px;
-    max-width:24ch;
-    line-height:1.45;
-  }
+  .cap{font-size:.88rem;color:var(--muted);margin-top:9px;max-width:24ch}
 
-  /* ---------- body grid ---------- */
+  /* ---------- timeline ---------- */
 
-  .cols{
-    display:grid;
-    grid-template-columns:1fr 268px;
-    gap:64px;
-    padding:56px 0 40px;
-    align-items:start;
-  }
-
-  .sec-head{
+  .tl{border-top:1px solid var(--edge);padding:38px 0 34px}
+  .tl-label{
     font-family:var(--mono);
     font-size:.7rem;
     letter-spacing:.16em;
     text-transform:uppercase;
-    color:var(--slate);
-    margin:0 0 26px;
-    padding-bottom:10px;
-    border-bottom:1px solid var(--rule);
+    color:var(--muted);
+    margin:0 0 20px;
+  }
+  .tl-track{display:grid;gap:8px}
+  .tl-row{position:relative;height:32px;background:var(--panel);border-radius:2px}
+  .tl-bar{
+    position:absolute;top:0;height:100%;
+    border-radius:2px;
+    display:flex;align-items:center;
+    padding:0 12px;
+    white-space:nowrap;overflow:hidden;
+    font-family:var(--mono);font-size:.74rem;color:#fff;
+  }
+  .tl-row:nth-child(1) .tl-bar{background:#A7A9A6}
+  .tl-row:nth-child(2) .tl-bar{background:#7E8790}
+  .tl-row:nth-child(3) .tl-bar{background:#455160}
+  .tl-row:nth-child(4) .tl-bar{background:var(--ink)}
+  .tl-axis{
+    display:flex;justify-content:space-between;
+    margin-top:11px;
+    font-family:var(--mono);font-size:.7rem;color:var(--muted);
   }
 
-  .job{padding:0 0 40px}
-  .job + .job{border-top:1px solid var(--rule);padding-top:34px}
+  /* ---------- body ---------- */
 
+  section{border-top:1px solid var(--edge);padding:44px 0}
+
+  h2{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+    margin:0 0 28px;
+  }
+
+  .job{margin-bottom:34px}
+  .job:last-child{margin-bottom:0}
   .job-top{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:6px 18px;
+    display:flex;flex-wrap:wrap;
+    align-items:baseline;justify-content:space-between;
+    gap:4px 18px;
   }
-  .job-title{
+  .job h3{
     font-family:var(--display);
-    font-weight:700;
-    font-size:1.32rem;
+    font-weight:600;
+    font-size:1.16rem;
     letter-spacing:-.015em;
     margin:0;
   }
-  .job-org{
-    display:block;
-    font-family:var(--body);
-    font-weight:500;
-    font-size:.98rem;
-    color:var(--signal);
-    margin-top:5px;
-  }
-  .job-dates{
-    font-family:var(--mono);
-    font-size:.76rem;
-    color:var(--slate);
-    white-space:nowrap;
-  }
-
-  .job ul{margin:20px 0 0;padding:0;list-style:none}
-  .job li{
-    position:relative;
-    padding-left:20px;
-    margin-bottom:13px;
-    max-width:68ch;
-  }
+  .job .org{color:var(--orange);font-weight:500}
+  .job .when{font-family:var(--mono);font-size:.76rem;color:var(--muted);white-space:nowrap}
+  .job ul{margin:12px 0 0;padding:0;list-style:none}
+  .job li{position:relative;padding-left:18px;margin-bottom:9px;max-width:70ch;font-size:.95rem}
   .job li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:.62em;
-    width:8px;
-    height:1px;
-    background:var(--signal);
+    content:"";position:absolute;left:0;top:.66em;
+    width:7px;height:1px;background:var(--orange);
   }
 
-  /* ---------- sidebar ---------- */
-
-  .rail{position:sticky;top:36px}
-  .rail-block{margin-bottom:38px}
-  .rail-head{
-    font-family:var(--mono);
-    font-size:.68rem;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--slate);
-    margin:0 0 14px;
-    padding-bottom:9px;
-    border-bottom:1px solid var(--rule);
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .kv{margin-bottom:13px}
+  .kv .k{
+    font-family:var(--mono);font-size:.7rem;
+    color:var(--muted);display:block;margin-bottom:2px;
   }
-  .rail-group{margin-bottom:15px}
-  .rail-key{
-    font-family:var(--mono);
-    font-size:.7rem;
-    color:var(--slate);
-    display:block;
-    margin-bottom:4px;
+  .kv .v{font-size:.93rem}
+  .plain{margin:0;padding:0;list-style:none;font-size:.93rem}
+  .plain li{margin-bottom:9px}
+
+  footer{border-top:1px solid var(--edge);padding:34px 0 76px}
+  .links{display:flex;flex-wrap:wrap;gap:12px 26px;margin:0 0 18px}
+  .links a{
+    font-family:var(--mono);font-size:.88rem;text-decoration:none;
+    border-bottom:1px solid var(--edge);padding-bottom:3px;
   }
-  .rail-val{font-size:.88rem;line-height:1.45}
-  .rail-list{margin:0;padding:0;list-style:none;font-size:.86rem;line-height:1.5}
-  .rail-list li{margin-bottom:11px}
+  .links a:hover{border-bottom-color:var(--orange)}
+  .colophon{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin:0}
 
-  /* ---------- footer ---------- */
-
-  footer{
-    border-top:1px solid var(--ink);
-    padding:26px 0 60px;
-    font-family:var(--mono);
-    font-size:.72rem;
-    color:var(--slate);
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px 24px;
-    justify-content:space-between;
-  }
-
-  /* ---------- responsive ---------- */
-
-  @media (max-width:820px){
-    .cols{grid-template-columns:1fr;gap:20px;padding-top:44px}
-    .rail{position:static;border-top:1px solid var(--rule);padding-top:34px}
-    .masthead{padding:52px 0 32px}
-    .tl-bar span{font-size:.66rem}
-  }
-
-  @media (max-width:560px){
-    .wrap{padding:0 20px}
-    .tl-row{height:30px}
-    .tl-bar{padding:0 8px}
-    .tl-bar span{font-size:0}
+  @media (max-width:680px){
+    header{padding-top:54px}
+    .grid2{grid-template-columns:1fr;gap:30px}
+    .built{flex-direction:column;align-items:flex-start}
+    .tl-bar{font-size:0;padding:0}
     .tl-row::after{
       content:attr(data-org);
-      position:absolute;
-      left:10px;
-      top:50%;
+      position:absolute;left:11px;top:50%;
       transform:translateY(-50%);
-      font-family:var(--mono);
-      font-size:.68rem;
-      color:var(--ink);
-      pointer-events:none;
+      font-family:var(--mono);font-size:.7rem;color:var(--ink);
     }
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    .tl-bar{animation:none}
-  }
-
-  /* ---------- print ---------- */
-
-  @media print{
-    :root{--paper:#fff;--paper-2:#eee}
-    body{font-size:10.5pt}
-    .timeline,.metrics{display:none}
-    .cols{grid-template-columns:1fr 220px;gap:32px;padding-top:18px}
-    .masthead{padding:0 0 18px}
-    .job{page-break-inside:avoid}
-    .rail{position:static}
-    footer{display:none}
   }
 </style>
 </head>
 <body>
 
-<header class="masthead wrap">
+<header class="wrap">
   <h1 class="name">Haseeb<br>Sibtain</h1>
-  <p class="role">Senior CloudOps &amp; DevOps Engineer</p>
-  <p class="thesis">Ten years keeping production infrastructure boring — AWS and Azure platforms, automation that removes manual steps, and cost work that pays for itself. Most recently owned the cloud platform for a business unit serving 10M+ monthly users.</p>
-  <nav class="contact">
-    <span>Carteret, NJ</span>
-    <span>Open to Principal / Staff platform roles</span>
-    <a href="https://linkedin.com/in/haseebsibtain" rel="noopener">linkedin.com/in/haseebsibtain</a>
-  </nav>
+  <p class="role">Senior Cloud Engineer</p>
+  <p class="thesis">Ten years keeping production infrastructure boring. AWS and Azure platforms, automation that removes manual steps, and cost work that pays for itself.</p>
+
+  <div class="built">
+    <p class="built-text">This page is a <b>resume</b>. The infrastructure under it was built from scratch for this project: a private <b>S3</b> bucket, <b>CloudFront</b> in front of it and DNS. Everything defined in <b>Terraform</b>.</p>
+    <a href="https://github.com/haseebsibtain/terraform-aws-site">Read the code that built this →</a>
+    <p class="edge" id="edge">&nbsp;</p>
+  </div>
 </header>
 
-<section class="timeline wrap" aria-label="Career timeline">
-  <p class="tl-label">Tenure / 2015 — 2026</p>
-  <div class="tl-track">
-    <div class="tl-row" data-org="Accenture">
-      <div class="tl-bar" style="left:0%;width:27.8%"><span>Accenture · 3 yr</span></div>
+<div class="wrap">
+  <div class="metrics">
+    <div>
+      <div class="fig">$500K+</div>
+      <p class="cap">Cloud spend removed through FinOps governance and lifecycle policy</p>
     </div>
-    <div class="tl-row" data-org="CBS">
-      <div class="tl-bar" style="left:28.6%;width:23.8%"><span>CBS · 2 yr 7 mo</span></div>
+    <div>
+      <div class="fig">4h → 30m</div>
+      <p class="cap">Release cycle after rebuilding the deployment pipeline</p>
     </div>
-    <div class="tl-row" data-org="NBCUniversal">
-      <div class="tl-bar" style="left:53.2%;width:8.7%"><span>NBCU · 1 yr</span></div>
+    <div>
+      <div class="fig">10M+</div>
+      <p class="cap">Monthly users on the platform I owned at Harvard Business Publishing</p>
     </div>
-    <div class="tl-row" data-org="Harvard Business Publishing">
-      <div class="tl-bar" style="left:63.5%;width:36.5%"><span>Harvard Business Publishing · 3 yr 11 mo</span></div>
+    <div>
+      <div class="fig">25M+</div>
+      <p class="cap">Viewers on the Olympics streaming build at NBCUniversal</p>
     </div>
   </div>
-  <div class="tl-axis"><span>2015</span><span>2018</span><span>2021</span><span>2023</span><span>2026</span></div>
+</div>
+
+<div class="wrap">
+  <div class="tl">
+    <p class="tl-label">2015 — 2026</p>
+    <div class="tl-track">
+      <div class="tl-row" data-org="Accenture"><div class="tl-bar" style="left:0%;width:27.8%">Accenture</div></div>
+      <div class="tl-row" data-org="CBS"><div class="tl-bar" style="left:28.6%;width:23.8%">CBS</div></div>
+      <div class="tl-row" data-org="NBCUniversal"><div class="tl-bar" style="left:53.2%;width:8.7%">NBCUniversal</div></div>
+      <div class="tl-row" data-org="Harvard Business Publishing"><div class="tl-bar" style="left:63.5%;width:36.5%">Harvard Business Publishing</div></div>
+    </div>
+    <div class="tl-axis"><span>2015</span><span>2018</span><span>2021</span><span>2023</span><span>2026</span></div>
+  </div>
+</div>
+
+<section class="wrap">
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-top">
+      <h3>Senior DevOps Engineer <span class="org">Harvard Business Publishing</span></h3>
+      <span class="when">Jul 2022 — May 2026</span>
+    </div>
+    <ul>
+      <li>Owned the cloud platform for the HBR business unit end to end, serving more than 10M monthly users.</li>
+      <li>Rebuilt deployment workflows on Jenkins and GitHub Actions, taking releases from four hours to thirty minutes.</li>
+      <li>Started and led a FinOps program that cut annual S3 spend by $100K and drove more than $500K in long-term savings.</li>
+      <li>Moved legacy Elastic Beanstalk workloads to ECS Fargate and standardized provisioning with reusable Terraform and CloudFormation patterns.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <h3>Cloud Automation Engineer <span class="org">NBCUniversal</span></h3>
+      <span class="when">Jun 2021 — May 2022</span>
+    </div>
+    <ul>
+      <li>Early member of a new cloud team, building the AWS and Azure infrastructure behind Olympics streaming on Peacock for 25M+ viewers.</li>
+      <li>Automated provisioning with Terraform and Ansible against a fixed, immovable go-live date.</li>
+      <li>Wrote the onboarding that took new engineer ramp-up from three weeks to one.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <h3>Linux Engineer <span class="org">CBS</span></h3>
+      <span class="when">Nov 2018 — May 2021</span>
+    </div>
+    <ul>
+      <li>Ran Linux production environments and automated recurring operational work in Bash and Python.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <h3>Linux Administrator <span class="org">Accenture</span></h3>
+      <span class="when">Nov 2015 — Oct 2018</span>
+    </div>
+    <ul>
+      <li>Enterprise Linux infrastructure, patch management, performance tuning, production support.</li>
+    </ul>
+  </div>
 </section>
 
-<section class="metrics wrap" aria-label="Impact summary">
-  <div class="metric">
-    <div class="metric-fig">$500K+</div>
-    <p class="metric-cap">Cloud cost reduced through FinOps governance and lifecycle policy</p>
-  </div>
-  <div class="metric">
-    <div class="metric-fig">4h &rarr; 30m</div>
-    <p class="metric-cap">Release cycle after rebuilding deployment workflows</p>
-  </div>
-  <div class="metric">
-    <div class="metric-fig">10M+</div>
-    <p class="metric-cap">Monthly users on platforms under my ownership</p>
-  </div>
-  <div class="metric">
-    <div class="metric-fig">25M+</div>
-    <p class="metric-cap">Viewers served by the Olympics streaming build at NBCU</p>
-  </div>
-</section>
-
-<main class="cols wrap">
-
-  <div>
-    <h2 class="sec-head">Experience</h2>
-
-    <article class="job">
-      <div class="job-top">
-        <h3 class="job-title">Senior CloudOps Engineer<span class="job-org">Harvard Business Publishing</span></h3>
-        <span class="job-dates">Jul 2022 — May 2026</span>
-      </div>
-      <ul>
-        <li>Rebuilt enterprise deployment workflows on Jenkins and GitHub Actions, cutting release cycles from four hours to 30 minutes and removing manual deployment risk across production systems serving 10M+ monthly users.</li>
-        <li>Started and led a FinOps program across business units, introducing S3 lifecycle governance and cleanup policies that cut annual S3 spend by $100K and drove $500K+ in long-term savings.</li>
-        <li>Rolled out Splunk Cloud observability across AWS environments, reducing alert noise 40% and doubling issue detection speed in production.</li>
-        <li>Migrated legacy Elastic Beanstalk workloads to ECS Fargate, modernizing the deployment architecture and improving release consistency and scalability.</li>
-        <li>Led an organization-wide automation effort integrating Ansible with AWS Systems Manager to standardize server configuration and automate patching across multiple business units.</li>
-        <li>Built reusable Terraform and CloudFormation patterns that standardized provisioning and shortened environment onboarding for other engineering teams.</li>
-        <li>Worked with security to harden IAM standards, enforce least-privilege access, and put continuous guardrails in place across AWS accounts.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="job-top">
-        <h3 class="job-title">Cloud Automation Engineer<span class="job-org">NBCUniversal</span></h3>
-        <span class="job-dates">Jun 2021 — May 2022</span>
-      </div>
-      <ul>
-        <li>Led technical delivery and stakeholder alignment for NBC's Olympics live streaming platform on Peacock, coordinating engineering, product, and leadership against a fixed go-live date for 25M+ viewers.</li>
-        <li>Architected and ran the AWS and Azure infrastructure behind the streaming platform, designed for high availability and zero-downtime live event delivery.</li>
-        <li>Automated provisioning with Terraform, Ansible, and CI/CD tooling, standardizing deployment across cloud-native and containerized environments.</li>
-        <li>Implemented Dynatrace and CloudWatch observability, cutting troubleshooting time and improving incident response during live production.</li>
-        <li>Wrote the onboarding documentation and operational standards that shortened engineer ramp-up as the team grew.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="job-top">
-        <h3 class="job-title">Linux Engineer<span class="job-org">CBS</span></h3>
-        <span class="job-dates">Nov 2018 — May 2021</span>
-      </div>
-      <ul>
-        <li>Ran Linux production environments supporting enterprise applications, deployments, and reliability work.</li>
-        <li>Automated recurring operational and deployment tasks in Bash and Python, reducing manual effort and improving consistency across production systems.</li>
-        <li>Handled production troubleshooting and incident response across enterprise infrastructure.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="job-top">
-        <h3 class="job-title">Linux Administrator<span class="job-org">Accenture</span></h3>
-        <span class="job-dates">Nov 2015 — Oct 2018</span>
-      </div>
-      <ul>
-        <li>Supported enterprise Linux infrastructure with a focus on patch management, performance tuning, and production support.</li>
-        <li>Worked across infrastructure and operations teams on deployments and operational improvements in large-scale environments.</li>
-      </ul>
-    </article>
-  </div>
-
-  <aside class="rail">
-    <div class="rail-block">
-      <h2 class="rail-head">Stack</h2>
-      <div class="rail-group"><span class="rail-key">Cloud</span><div class="rail-val">AWS, Azure</div></div>
-      <div class="rail-group"><span class="rail-key">Containers</span><div class="rail-val">Kubernetes, Docker, ECS, Fargate</div></div>
-      <div class="rail-group"><span class="rail-key">Infrastructure as code</span><div class="rail-val">Terraform, CloudFormation, Ansible</div></div>
-      <div class="rail-group"><span class="rail-key">CI/CD</span><div class="rail-val">Jenkins, GitHub Actions</div></div>
-      <div class="rail-group"><span class="rail-key">Observability</span><div class="rail-val">Splunk Cloud, CloudWatch, Dynatrace</div></div>
-      <div class="rail-group"><span class="rail-key">Languages</span><div class="rail-val">Python, Bash, Linux</div></div>
+<section class="wrap">
+  <div class="grid2">
+    <div>
+      <h2>Stack</h2>
+      <div class="kv"><span class="k">Cloud</span><span class="v">AWS, Azure</span></div>
+      <div class="kv"><span class="k">Infrastructure as code</span><span class="v">Terraform, CloudFormation, Ansible</span></div>
+      <div class="kv"><span class="k">Containers</span><span class="v">Kubernetes, Docker, ECS, Fargate</span></div>
+      <div class="kv"><span class="k">CI/CD</span><span class="v">Jenkins, GitHub Actions</span></div>
+      <div class="kv"><span class="k">Observability</span><span class="v">Splunk Cloud, CloudWatch, Dynatrace</span></div>
+      <div class="kv"><span class="k">Languages</span><span class="v">Python, Bash, Linux</span></div>
     </div>
-
-    <div class="rail-block">
-      <h2 class="rail-head">Certifications</h2>
-      <ul class="rail-list">
-        <li>AWS Certified Solutions Architect &ndash; Associate</li>
-        <li>AWS Certified SysOps Administrator &ndash; Associate</li>
+    <div>
+      <h2>Certifications</h2>
+      <ul class="plain">
+        <li>AWS Certified Solutions Architect, Associate</li>
+        <li>AWS Certified SysOps Administrator, Associate</li>
         <li>AWS Certified Cloud Practitioner</li>
       </ul>
-    </div>
-
-    <div class="rail-block">
-      <h2 class="rail-head">Education</h2>
-      <ul class="rail-list">
-        <li>A.A.S., Computer Operations &amp; Network Security<br><span class="rail-key" style="margin-top:5px">City University of New York</span></li>
+      <h2 style="margin-top:32px">Education</h2>
+      <ul class="plain">
+        <li>A.A.S. Computer Operations &amp; Network Security<br><span style="color:var(--muted)">City University of New York</span></li>
       </ul>
     </div>
-  </aside>
-
-</main>
+  </div>
+</section>
 
 <footer class="wrap">
-  <span>Haseeb Sibtain</span>
-  <span>Served from AWS using CloudFront & S3</span>
+  <div class="links">
+    <a href="https://github.com/haseebsibtain/terraform-aws-site">GitHub ↗</a>
+    <a href="https://linkedin.com/in/haseebsibtain">LinkedIn ↗</a>
+  </div>
+  <p class="colophon">Haseeb Sibtain · Carteret, NJ</p>
 </footer>
+
+<script>
+  fetch("/", { method: "HEAD", cache: "no-store" })
+    .then(function (r) {
+      var pop = r.headers.get("x-amz-cf-pop");
+      if (pop) {
+        document.getElementById("edge").textContent =
+          "Served to you from CloudFront edge " + pop + ".";
+      }
+    })
+    .catch(function () {});
+</script>
 
 </body>
 </html>

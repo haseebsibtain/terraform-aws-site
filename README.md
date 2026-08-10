@@ -2,7 +2,7 @@
 
 This is a static site served from a private S3 bucket through CloudFront, with a real domain and certificate. The bucket, the distribution, the DNS zone, the ACM cert and its validation records are all defined in Terraform.
 
-Live at [haseebsibtain.com](https://haseebsibtain.com). The page explains its own setup.
+Live at [haseebsibtain.com](https://haseebsibtain.com).
 
 ```
 Browser
