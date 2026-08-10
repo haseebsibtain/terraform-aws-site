@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haseeb Sibtain — Senior CloudOps / DevOps Engineer</title>
+<meta name="description" content="Haseeb Sibtain, Senior CloudOps and DevOps Engineer. Ten years of cloud infrastructure, automation, and platform reliability across AWS and Azure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1F4F3;
+    --paper-2:#E7ECEA;
+    --ink:#14201D;
+    --slate:#5B6B67;
+    --rule:#CFD8D5;
+    --signal:#1F6F5C;
+    --signal-soft:#DCE9E5;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+
+  /* ---------- masthead ---------- */
+
+  .masthead{padding:72px 0 40px}
+
+  .name{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.6rem,7vw,4.6rem);
+    line-height:.95;
+    letter-spacing:-.03em;
+    margin:0;
+  }
+
+  .role{
+    font-family:var(--mono);
+    font-size:.8rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--signal);
+    margin:18px 0 0;
+  }
+
+  .thesis{
+    font-size:clamp(1.05rem,2.2vw,1.3rem);
+    line-height:1.5;
+    max-width:60ch;
+    margin:26px 0 0;
+    color:var(--ink);
+  }
+
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 22px;
+    margin:30px 0 0;
+    font-family:var(--mono);
+    font-size:.82rem;
+    color:var(--slate);
+  }
+  .contact a{text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
+  .contact a:hover{border-bottom-color:var(--signal);color:var(--signal)}
+
+  /* ---------- signature: tenure timeline ---------- */
+
+  .timeline{
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--rule);
+    padding:34px 0 30px;
+  }
+
+  .tl-label{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin:0 0 22px;
+  }
+
+  .tl-track{position:relative;display:grid;gap:9px}
+
+  .tl-row{
+    position:relative;
+    height:34px;
+    background:var(--paper-2);
+    border-radius:2px;
+  }
+
+  .tl-bar{
+    position:absolute;
+    top:0;
+    height:100%;
+    background:var(--signal);
+    border-radius:2px;
+    display:flex;
+    align-items:center;
+    padding:0 12px;
+    white-space:nowrap;
+    overflow:hidden;
+    transform-origin:left center;
+    animation:draw .75s cubic-bezier(.22,.9,.3,1) both;
+  }
+  .tl-bar span{
+    font-family:var(--mono);
+    font-size:.74rem;
+    font-weight:500;
+    color:#fff;
+    letter-spacing:.02em;
+  }
+  .tl-row:nth-child(1) .tl-bar{background:#9AAEA8;animation-delay:.05s}
+  .tl-row:nth-child(2) .tl-bar{background:#6E8A83;animation-delay:.16s}
+  .tl-row:nth-child(3) .tl-bar{background:#3E7A6C;animation-delay:.27s}
+  .tl-row:nth-child(4) .tl-bar{background:var(--signal);animation-delay:.38s}
+
+  @keyframes draw{from{transform:scaleX(0);opacity:.4}to{transform:scaleX(1);opacity:1}}
+
+  .tl-axis{
+    display:flex;
+    justify-content:space-between;
+    margin-top:12px;
+    font-family:var(--mono);
+    font-size:.7rem;
+    color:var(--slate);
+  }
+
+  /* ---------- metrics ---------- */
+
+  .metrics{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1px;
+    background:var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .metric{background:var(--paper);padding:32px 0 34px}
+  .metric-fig{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1.9rem,4vw,2.6rem);
+    letter-spacing:-.03em;
+    line-height:1;
+  }
+  .metric-cap{
+    font-family:var(--mono);
+    font-size:.72rem;
+    color:var(--slate);
+    margin-top:10px;
+    max-width:24ch;
+    line-height:1.45;
+  }
+
+  /* ---------- body grid ---------- */
+
+  .cols{
+    display:grid;
+    grid-template-columns:1fr 268px;
+    gap:64px;
+    padding:56px 0 40px;
+    align-items:start;
+  }
+
+  .sec-head{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin:0 0 26px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .job{padding:0 0 40px}
+  .job + .job{border-top:1px solid var(--rule);padding-top:34px}
+
+  .job-top{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:6px 18px;
+  }
+  .job-title{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:1.32rem;
+    letter-spacing:-.015em;
+    margin:0;
+  }
+  .job-org{
+    display:block;
+    font-family:var(--body);
+    font-weight:500;
+    font-size:.98rem;
+    color:var(--signal);
+    margin-top:5px;
+  }
+  .job-dates{
+    font-family:var(--mono);
+    font-size:.76rem;
+    color:var(--slate);
+    white-space:nowrap;
+  }
+
+  .job ul{margin:20px 0 0;padding:0;list-style:none}
+  .job li{
+    position:relative;
+    padding-left:20px;
+    margin-bottom:13px;
+    max-width:68ch;
+  }
+  .job li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.62em;
+    width:8px;
+    height:1px;
+    background:var(--signal);
+  }
+
+  /* ---------- sidebar ---------- */
+
+  .rail{position:sticky;top:36px}
+  .rail-block{margin-bottom:38px}
+  .rail-head{
+    font-family:var(--mono);
+    font-size:.68rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin:0 0 14px;
+    padding-bottom:9px;
+    border-bottom:1px solid var(--rule);
+  }
+  .rail-group{margin-bottom:15px}
+  .rail-key{
+    font-family:var(--mono);
+    font-size:.7rem;
+    color:var(--slate);
+    display:block;
+    margin-bottom:4px;
+  }
+  .rail-val{font-size:.88rem;line-height:1.45}
+  .rail-list{margin:0;padding:0;list-style:none;font-size:.86rem;line-height:1.5}
+  .rail-list li{margin-bottom:11px}
+
+  /* ---------- footer ---------- */
+
+  footer{
+    border-top:1px solid var(--ink);
+    padding:26px 0 60px;
+    font-family:var(--mono);
+    font-size:.72rem;
+    color:var(--slate);
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 24px;
+    justify-content:space-between;
+  }
+
+  /* ---------- responsive ---------- */
+
+  @media (max-width:820px){
+    .cols{grid-template-columns:1fr;gap:20px;padding-top:44px}
+    .rail{position:static;border-top:1px solid var(--rule);padding-top:34px}
+    .masthead{padding:52px 0 32px}
+    .tl-bar span{font-size:.66rem}
+  }
+
+  @media (max-width:560px){
+    .wrap{padding:0 20px}
+    .tl-row{height:30px}
+    .tl-bar{padding:0 8px}
+    .tl-bar span{font-size:0}
+    .tl-row::after{
+      content:attr(data-org);
+      position:absolute;
+      left:10px;
+      top:50%;
+      transform:translateY(-50%);
+      font-family:var(--mono);
+      font-size:.68rem;
+      color:var(--ink);
+      pointer-events:none;
+    }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .tl-bar{animation:none}
+  }
+
+  /* ---------- print ---------- */
+
+  @media print{
+    :root{--paper:#fff;--paper-2:#eee}
+    body{font-size:10.5pt}
+    .timeline,.metrics{display:none}
+    .cols{grid-template-columns:1fr 220px;gap:32px;padding-top:18px}
+    .masthead{padding:0 0 18px}
+    .job{page-break-inside:avoid}
+    .rail{position:static}
+    footer{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead wrap">
+  <h1 class="name">Haseeb<br>Sibtain</h1>
+  <p class="role">Senior CloudOps &amp; DevOps Engineer</p>
+  <p class="thesis">Ten years keeping production infrastructure boring — AWS and Azure platforms, automation that removes manual steps, and cost work that pays for itself. Most recently owned the cloud platform for a business unit serving 10M+ monthly users.</p>
+  <nav class="contact">
+    <span>Carteret, NJ</span>
+    <span>Open to Principal / Staff platform roles</span>
+    <a href="https://linkedin.com/in/haseebsibtain" rel="noopener">linkedin.com/in/haseebsibtain</a>
+  </nav>
+</header>
+
+<section class="timeline wrap" aria-label="Career timeline">
+  <p class="tl-label">Tenure / 2015 — 2026</p>
+  <div class="tl-track">
+    <div class="tl-row" data-org="Accenture">
+      <div class="tl-bar" style="left:0%;width:27.8%"><span>Accenture · 3 yr</span></div>
+    </div>
+    <div class="tl-row" data-org="CBS">
+      <div class="tl-bar" style="left:28.6%;width:23.8%"><span>CBS · 2 yr 7 mo</span></div>
+    </div>
+    <div class="tl-row" data-org="NBCUniversal">
+      <div class="tl-bar" style="left:53.2%;width:8.7%"><span>NBCU · 1 yr</span></div>
+    </div>
+    <div class="tl-row" data-org="Harvard Business Publishing">
+      <div class="tl-bar" style="left:63.5%;width:36.5%"><span>Harvard Business Publishing · 3 yr 11 mo</span></div>
+    </div>
+  </div>
+  <div class="tl-axis"><span>2015</span><span>2018</span><span>2021</span><span>2023</span><span>2026</span></div>
+</section>
+
+<section class="metrics wrap" aria-label="Impact summary">
+  <div class="metric">
+    <div class="metric-fig">$500K+</div>
+    <p class="metric-cap">Cloud cost reduced through FinOps governance and lifecycle policy</p>
+  </div>
+  <div class="metric">
+    <div class="metric-fig">4h &rarr; 30m</div>
+    <p class="metric-cap">Release cycle after rebuilding deployment workflows</p>
+  </div>
+  <div class="metric">
+    <div class="metric-fig">10M+</div>
+    <p class="metric-cap">Monthly users on platforms under my ownership</p>
+  </div>
+  <div class="metric">
+    <div class="metric-fig">25M+</div>
+    <p class="metric-cap">Viewers served by the Olympics streaming build at NBCU</p>
+  </div>
+</section>
+
+<main class="cols wrap">
+
+  <div>
+    <h2 class="sec-head">Experience</h2>
+
+    <article class="job">
+      <div class="job-top">
+        <h3 class="job-title">Senior CloudOps Engineer<span class="job-org">Harvard Business Publishing</span></h3>
+        <span class="job-dates">Jul 2022 — May 2026</span>
+      </div>
+      <ul>
+        <li>Rebuilt enterprise deployment workflows on Jenkins and GitHub Actions, cutting release cycles from four hours to 30 minutes and removing manual deployment risk across production systems serving 10M+ monthly users.</li>
+        <li>Started and led a FinOps program across business units, introducing S3 lifecycle governance and cleanup policies that cut annual S3 spend by $100K and drove $500K+ in long-term savings.</li>
+        <li>Rolled out Splunk Cloud observability across AWS environments, reducing alert noise 40% and doubling issue detection speed in production.</li>
+        <li>Migrated legacy Elastic Beanstalk workloads to ECS Fargate, modernizing the deployment architecture and improving release consistency and scalability.</li>
+        <li>Led an organization-wide automation effort integrating Ansible with AWS Systems Manager to standardize server configuration and automate patching across multiple business units.</li>
+        <li>Built reusable Terraform and CloudFormation patterns that standardized provisioning and shortened environment onboarding for other engineering teams.</li>
+        <li>Worked with security to harden IAM standards, enforce least-privilege access, and put continuous guardrails in place across AWS accounts.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-top">
+        <h3 class="job-title">Cloud Automation Engineer<span class="job-org">NBCUniversal</span></h3>
+        <span class="job-dates">Jun 2021 — May 2022</span>
+      </div>
+      <ul>
+        <li>Led technical delivery and stakeholder alignment for NBC's Olympics live streaming platform on Peacock, coordinating engineering, product, and leadership against a fixed go-live date for 25M+ viewers.</li>
+        <li>Architected and ran the AWS and Azure infrastructure behind the streaming platform, designed for high availability and zero-downtime live event delivery.</li>
+        <li>Automated provisioning with Terraform, Ansible, and CI/CD tooling, standardizing deployment across cloud-native and containerized environments.</li>
+        <li>Implemented Dynatrace and CloudWatch observability, cutting troubleshooting time and improving incident response during live production.</li>
+        <li>Wrote the onboarding documentation and operational standards that shortened engineer ramp-up as the team grew.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-top">
+        <h3 class="job-title">Linux Engineer<span class="job-org">CBS</span></h3>
+        <span class="job-dates">Nov 2018 — May 2021</span>
+      </div>
+      <ul>
+        <li>Ran Linux production environments supporting enterprise applications, deployments, and reliability work.</li>
+        <li>Automated recurring operational and deployment tasks in Bash and Python, reducing manual effort and improving consistency across production systems.</li>
+        <li>Handled production troubleshooting and incident response across enterprise infrastructure.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-top">
+        <h3 class="job-title">Linux Administrator<span class="job-org">Accenture</span></h3>
+        <span class="job-dates">Nov 2015 — Oct 2018</span>
+      </div>
+      <ul>
+        <li>Supported enterprise Linux infrastructure with a focus on patch management, performance tuning, and production support.</li>
+        <li>Worked across infrastructure and operations teams on deployments and operational improvements in large-scale environments.</li>
+      </ul>
+    </article>
+  </div>
+
+  <aside class="rail">
+    <div class="rail-block">
+      <h2 class="rail-head">Stack</h2>
+      <div class="rail-group"><span class="rail-key">Cloud</span><div class="rail-val">AWS, Azure</div></div>
+      <div class="rail-group"><span class="rail-key">Containers</span><div class="rail-val">Kubernetes, Docker, ECS, Fargate</div></div>
+      <div class="rail-group"><span class="rail-key">Infrastructure as code</span><div class="rail-val">Terraform, CloudFormation, Ansible</div></div>
+      <div class="rail-group"><span class="rail-key">CI/CD</span><div class="rail-val">Jenkins, GitHub Actions</div></div>
+      <div class="rail-group"><span class="rail-key">Observability</span><div class="rail-val">Splunk Cloud, CloudWatch, Dynatrace</div></div>
+      <div class="rail-group"><span class="rail-key">Languages</span><div class="rail-val">Python, Bash, Linux</div></div>
+    </div>
+
+    <div class="rail-block">
+      <h2 class="rail-head">Certifications</h2>
+      <ul class="rail-list">
+        <li>AWS Certified Solutions Architect &ndash; Associate</li>
+        <li>AWS Certified SysOps Administrator &ndash; Associate</li>
+        <li>AWS Certified Cloud Practitioner</li>
+      </ul>
+    </div>
+
+    <div class="rail-block">
+      <h2 class="rail-head">Education</h2>
+      <ul class="rail-list">
+        <li>A.A.S., Computer Operations &amp; Network Security<br><span class="rail-key" style="margin-top:5px">City University of New York</span></li>
+      </ul>
+    </div>
+  </aside>
+
+</main>
+
+<footer class="wrap">
+  <span>Haseeb Sibtain</span>
+  <span>Served from AWS using CloudFront & S3</span>
+</footer>
+
+</body>
+</html>
