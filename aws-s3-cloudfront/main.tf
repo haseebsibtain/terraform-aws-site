@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# private S3 bucket fronted by Cloudfront
+# Private S3 bucket fronted by CloudFront
 # ---------------------------------------------------------------------------
 
 resource "aws_s3_bucket" "site" {
@@ -31,8 +31,6 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "site" {
   }
 }
 
-# Bucket policy: only this CloudFront distribution may read.
-
 data "aws_iam_policy_document" "site_bucket" {
   statement {
     sid       = "AllowCloudFrontOAC"
@@ -44,6 +42,8 @@ data "aws_iam_policy_document" "site_bucket" {
       identifiers = ["cloudfront.amazonaws.com"]
     }
 
+    # scoped to this distribution; without it any CloudFront distribution
+    # in any AWS account could front this bucket
     condition {
       test     = "StringEquals"
       variable = "AWS:SourceArn"
@@ -59,9 +59,37 @@ resource "aws_s3_bucket_policy" "site" {
   depends_on = [aws_s3_bucket_public_access_block.site]
 }
 
+resource "aws_s3_bucket_lifecycle_configuration" "site" {
+  bucket = aws_s3_bucket.site.id
+
+  rule {
+    id     = "expire-old-versions"
+    status = "Enabled"
+    filter {}
+
+    noncurrent_version_expiration {
+      noncurrent_days           = 30
+      newer_noncurrent_versions = 3
+    }
+  }
+
+  rule {
+    id     = "abort-incomplete-uploads"
+    status = "Enabled"
+    filter {}
+
+    abort_incomplete_multipart_upload {
+      days_after_initiation = 7
+    }
+  }
+
+  depends_on = [aws_s3_bucket_versioning.site]
+}
+
 # ---------------------------------------------------------------------------
 # Site content
-# Content in Terraform for POC self-containedness; prod should split infra from content deploys
+# Content in Terraform keeps this repo self-contained; prod should split
+# infra from content deploys
 # ---------------------------------------------------------------------------
 
 resource "aws_s3_object" "site_files" {
@@ -102,7 +130,7 @@ resource "aws_cloudfront_origin_access_control" "site" {
 resource "aws_cloudfront_distribution" "site" {
   enabled             = true
   aliases             = [var.domain_name, "www.${var.domain_name}"]
-  comment             = "${var.project_name} — private S3 origin via OAC"
+  comment             = "${var.project_name}: private S3 origin via OAC"
   default_root_object = "index.html" # CloudFront's index-document equivalent
   price_class         = var.price_class
   http_version        = "http2and3"
@@ -128,11 +156,13 @@ resource "aws_cloudfront_distribution" "site" {
       restriction_type = "none"
     }
   }
+
   viewer_certificate {
     acm_certificate_arn      = aws_acm_certificate_validation.site.certificate_arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
   }
+
   custom_error_response {
     error_code            = 403
     response_code         = 200
