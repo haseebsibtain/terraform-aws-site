@@ -1,8 +1,5 @@
 # ---------------------------------------------------------------------------
-# Origin: private S3 bucket
-#
-# Same architecture as the Azure build (Blob Storage + Front Door Premium +
-# Private Link)
+# private S3 bucket fronted by Cloudfront
 # ---------------------------------------------------------------------------
 
 resource "aws_s3_bucket" "site" {
