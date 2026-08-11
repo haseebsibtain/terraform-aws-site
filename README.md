@@ -4,17 +4,26 @@ This is a static site served from a private S3 bucket through CloudFront, with a
 
 Live at [haseebsibtain.com](https://haseebsibtain.com).
 
+
+```mermaid
+flowchart LR
+    U(["Browser"])
+    R["Route 53<br/><small>alias at apex</small>"]
+    A["ACM<br/><small>us-east-1</small>"]
+    CF["CloudFront<br/><small>cache · compress · TLS 1.2+</small>"]
+    S3[("S3 bucket<br/><small>private</small>")]
+
+    U -->|1 . DNS| R
+    U -->|2 . HTTPS| CF
+    A -.->|certificate| CF
+    CF -->|3 . signed request, OAC| S3
+
+    classDef aws fill:#232F3E,stroke:#FF9900,color:#fff
+    classDef store fill:#1D2530,stroke:#C2570A,color:#fff
+    class R,A,CF aws
+    class S3 store
 ```
-Browser
-  │   DNS       Route 53 hosted zone, alias record at the apex
-  │   TLS       ACM certificate in us-east-1, validated by DNS
-  ▼
-CloudFront      cached, compressed, HTTPS only
-  │
-  │   signed origin request (Origin Access Control)
-  ▼
-S3 bucket       no public access, no website endpoint
-```
+
 
 The bucket has no route in from the internet. CloudFront is the only thing that can read it.
 
